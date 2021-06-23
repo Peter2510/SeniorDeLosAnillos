@@ -54,6 +54,48 @@ public class Personaje{
 		return numAleatorio2;
 	}
 
+	public String getNombre(){
+		return nombre;
+	}
+
+	public int getVida(){
+		return vida;
+	}
+
+	public void setVida(int vida){
+		this.vida = vida;
+
+	}
+
+	public int getArmadura(){
+		return armadura;
+	}
+
+	public int getAtaque(){
+		return ataqueMaximo;
+	}
+
+
+	 public void recibirAtaque(Personaje atacante){
+        System.out.println(atacante.getNombre() + " atacará a "+ this.getNombre());
+
+        int danyoRecibido = this.obtenerArmadura(atacante) - atacante.obtenerAtaque(this);
+        if (danyoRecibido <= 0){
+            this.vida += danyoRecibido;
+        }
+        else{
+            danyoRecibido = 0;
+        }
+        System.out.println(atacante.getNombre()+  " ataco a  " + this.getNombre() +" vida restante: "+this.getVida());
+    }
+
+    public int obtenerArmadura(Personaje atacante){
+        return this.getArmadura();
+    }
+
+    public int obtenerAtaque(Personaje defensor){
+        return this.getAtaque();
+    }
 
 
 

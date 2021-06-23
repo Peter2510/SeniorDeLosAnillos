@@ -4,6 +4,7 @@ import src.personaje.Personaje;
 
 
 public class Heroes extends Personaje{
+	int numeroMaximo;
 
 
 
@@ -22,14 +23,16 @@ public class Heroes extends Personaje{
 
 		if (getNumAleatorio1() > getNumAleatorio2()) {
 
-			System.out.println("El daño realizado fue de: " + getNumAleatorio1());
+			System.out.println("El daño realizado sera de: " + getNumAleatorio1());
+			numeroMaximo = getNumAleatorio1();
 			
 		}
 
 		
 		if (getNumAleatorio2() > getNumAleatorio1()) {
 
-			System.out.println("El daño realizado fue de: " + getNumAleatorio2());
+			System.out.println("El daño realizado sera de: " + getNumAleatorio2());
+		 numeroMaximo = getNumAleatorio2();
 			
 		}		
 
@@ -38,7 +41,9 @@ public class Heroes extends Personaje{
 	}
 
 	
-
+	public int getNumeroMayor(){
+		return numeroMaximo;
+	}
 
 
 

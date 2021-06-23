@@ -7,8 +7,6 @@ public class Bestia extends Personaje{
 
 	
 	
-
-
 	public Bestia(String nombre, int vida){
 
 		super(nombre, vida, 90, 125, true);
@@ -19,7 +17,7 @@ public class Bestia extends Personaje{
 
 	public void atacar(){
 		lanzarDado1(ataqueMaximo);
-		System.out.println("El daño realizado fue de: " + getNumAleatorio1());
+		System.out.println("El daño realizado sera de: " + getNumAleatorio1());
 
 	}
 
