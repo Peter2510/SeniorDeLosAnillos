@@ -15,6 +15,7 @@ public class Principal{
 		Orco b1 = new Orco("Orco1");
 		Trasgos b2 = new Trasgos("Trasgo1");
 		Elfos e1 = new Elfos("elfo 1");
+		Hobbits h1 = new Hobbits("Hobbit 1");
 
 	
 	
@@ -23,7 +24,7 @@ public class Principal{
 		b1.presentarse();
 		b2.presentarse();
 		e1.presentarse();
-	
+		h1.presentarse();	
 	}
 
 
