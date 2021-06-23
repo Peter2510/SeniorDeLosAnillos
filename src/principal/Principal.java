@@ -6,27 +6,66 @@ import src.heroes.*;
 
 public class Principal{
 
-	public static void main(String[] args) {
+	private Bestia ejercitoBestia [];
+	private Heroes ejercitoHeroes[];
 
 
-		
+	public Principal(){
 
 
-		Orco b1 = new Orco("Orco1");
-		Trasgos b2 = new Trasgos("Trasgo1");
-		Elfos e1 = new Elfos("elfo 1");
-		Hobbits h1 = new Hobbits("Hobbit 1");
 
-	
-	
+		ejercitoBestia = new Bestia[5];
+		inicializarBestias();
+
+		for (int i= 0; i < ejercitoBestia.length ;i++ ) {
+
+			ejercitoBestia[i].presentarse();
+			
+		}
 
 
-		b1.presentarse();
-		b2.presentarse();
-		e1.presentarse();
-		h1.presentarse();	
+
+
+
+
+
+
+
+
+
+
 	}
 
+	public void inicializarBestias(){
+		int random;
+		for (int i = 0; i < ejercitoBestia.length ; i++ ) {
+
+			int numero = (int)(Math.random()*2);
+
+			switch(numero){
+
+				case 0:
+
+				ejercitoBestia[i] = new Orco("Orco1");
+				break;
+
+				case 1:
+
+				ejercitoBestia[i] = new Trasgos("Trasgo1");
+				break;
+
+				default:
+					ejercitoBestia[i] = new Orco("sepa");
+					break;
+			}
+
+
+
+			
+		}
+	}
+
+		
 
 
 

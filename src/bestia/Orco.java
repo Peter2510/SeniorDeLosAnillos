@@ -13,11 +13,4 @@ public class Orco extends Bestia{
 
 	}
 
-	public void atacar(){
-		lanzarDado1(ataqueMaximo);
-		System.out.println("El daño realizado fue de: " + getNumAleatorio1());
-
-	}
-
-
 }
