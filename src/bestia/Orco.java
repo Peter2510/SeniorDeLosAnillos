@@ -1,19 +1,16 @@
 package src.bestia;
 
-import src.personaje.Personaje;
+
+public class Orco extends Bestia{
 
 
-public class Bestia extends Personaje{
 
-	
-	
+	public Orco(String nombre){
 
-
-	public Bestia(String nombre, int vida){
-
-		super(nombre, vida, 90, 125, true);
+		super(nombre, 300);
 		
-	
+		
+
 
 	}
 
