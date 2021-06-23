@@ -1,14 +1,13 @@
-package src.bestia;
+package src.heroes;
 
 import src.personaje.Personaje;
 
 
-public class Bestia extends Personaje{
+public class Heroes extends Personaje{
 
 	
 	protected int ataqueMaximo = 90;
-	protected int cantidadDados = 1;
-	protected int NumAleatorio1;
+	protected int cantidadDados = 2;
 	
 
 
@@ -20,12 +19,6 @@ public class Bestia extends Personaje{
 		this.ataqueMaximo = 90;
 		this.cantidadDados = cantidadDados;
 
-
-	}
-
-	public void atacar(){
-		lanzarDado1(90);
-		System.out.println("El daño realizado fue de: " + getNumAleatorio1());
 
 	}
 
