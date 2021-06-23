@@ -5,132 +5,154 @@ import src.heroes.*;
 
 public class Principal {
 
-  private Bestia ejercitoBestia[];
-  private Heroes ejercitoHeroes[];
-  private int cantBestias = 0;
-  private int cantHeroes = 0;
- 
-  public Principal() {
-
-    ejercitoBestia = new Bestia[5];
-    inicializarBestias();
-
-    System.out.println("\nEjercito de Bestias:");
-
-    for (int i = 0; i < ejercitoBestia.length; i++) {
-
-      ejercitoBestia[i].presentarse();
-
-    }
-
-    ejercitoHeroes = new Heroes[5];
-    inicializarHeroes();
-
-
-    System.out.println("\nEjercito de Heroes:");
-
-    for (int i = 0; i < ejercitoHeroes.length; i++) {
-
-      ejercitoHeroes[i].presentarse();
-
-    }
-    System.out.println("\n");
-    this.pelea();
-    System.out.println("\n");
-
-  }
-
-  public void inicializarBestias() {
-    int random;
-    for (int i = 0; i < ejercitoBestia.length; i++) {
-
-      int numero = (int)(Math.random() * 2);
-
-      switch (numero) {
-
-      case 0:
-
-        ejercitoBestia[i] = new Orco("Orco1");
-        break;
-
-      case 1:
-
-        ejercitoBestia[i] = new Trasgos("Trasgo1");
-        break;
-
-      default:
-        ejercitoBestia[i] = new Orco("sepa");
-        break;
-      }
-
-    }
-  }
-
-  public void inicializarHeroes() {
-
+    private Bestia ejercitoBestia[];
+    private Heroes ejercitoHeroes[];
     
 
-    for (int i = 0; i < ejercitoHeroes.length; i++) {
+    public Principal() {
 
-      int numero = (int)(Math.random() * 3);
-      
+        ejercitoBestia = new Bestia[3];
+        inicializarBestias();
 
-      switch (numero) {
+        System.out.println("\nEjercito de Bestias:");
 
-      case 0:
+        for (int i = 0; i < ejercitoBestia.length; i++) {
 
-        ejercitoHeroes[i] = new Elfos("Elfo1");
-        break;
+            ejercitoBestia[i].presentarse();
 
-      case 1:
-
-        ejercitoHeroes[i] = new Humanos("Humano1");
-        break;
-
-      case 2:
-        ejercitoHeroes[i] = new Hobbits("Hobbit 1");
-        break;
-
-      }
-
-    }
-  }
-
-   public void pelea(){
-
-    while(cantBestias==5 || cantHeroes==5){
-
-        for (int i = 0; i <ejercitoBestia.length ;i++ ) {
-          
-          System.out.println("\n");
-        System.out.println("Ataque de Heroe a Bestia\n");
-        ejercitoBestia[i].atacar();
-        ejercitoBestia[i].setVida(ejercitoBestia[i].getVida()-ejercitoBestia[i].getNumAleatorio1());
-        ejercitoBestia[i].recibirAtaque(ejercitoHeroes[i]);
-        if (ejercitoBestia[i].getVida()==0) {
-
-          cantBestias++;
-          
         }
-        
+
+        ejercitoHeroes = new Heroes[3];
+        inicializarHeroes();
+
+        System.out.println("\nEjercito de Heroes:");
+
+        for (int i = 0; i < ejercitoHeroes.length; i++) {
+
+            ejercitoHeroes[i].presentarse();
+
+        }
         System.out.println("\n");
-        System.out.println("Ataque de Bestia a Heroe\n");
-        ejercitoHeroes[i].atacar();
-        ejercitoHeroes[i].setVida(ejercitoHeroes[i].getVida()-ejercitoHeroes[i].getNumeroMayor());
-        ejercitoHeroes[i].recibirAtaque(ejercitoBestia[i]);  
-
-        if (ejercitoHeroes[i].getVida()==0) {
-
-          cantHeroes++;
-          
-        }
-        }
-        
+        this.pelea();
+        System.out.println("\n");
 
     }
 
-      
+    public void inicializarBestias() {
+
+        ejercitoBestia[0] = new Orco("Orco 1");
+        ejercitoBestia[1] = new Trasgos("Trasgo 1");
+        ejercitoBestia[2] = new Orco("Orco 2");
+    }
+
+    public void inicializarHeroes() {
+
+        ejercitoHeroes[0] = new Humanos("Humano 1");
+        ejercitoHeroes[1] = new Elfos("Elfo 1");
+        ejercitoHeroes[2] = new Hobbits("Hobbit 1");
+
+    }
+
+    public void pelea() {
+
         
+        int orco =1;
+        int humano = 1;
+        int trasgo= 1;
+        int elfo= 1;
+        int orco2 =1;
+        int hobbit= 1;
+
+
+        while (orco==1 && humano==1) {
+
+            System.out.println("\n          PELEA NO. 1          "); 
+
+            System.out.println("\n");
+            System.out.println(" ********Ataque de Heroe a Bestia ********\n");
+            ejercitoBestia[0].atacar();
+            ejercitoBestia[0].setVida(ejercitoBestia[0].getVida() - ejercitoBestia[0].getNumAleatorio1());
+            ejercitoBestia[0].recibirAtaque(ejercitoHeroes[0]);
+
+            System.out.println("\n");
+            System.out.println(" ********Ataque de Bestia a Heroe ********\n");
+            ejercitoHeroes[0].atacar();
+            ejercitoHeroes[0].setVida(ejercitoHeroes[0].getVida() - ejercitoHeroes[0].getNumeroMayor());
+            ejercitoHeroes[0].recibirAtaque(ejercitoBestia[0]);
+
+            if (ejercitoBestia[0].getVida()<=0) {
+                orco=0;
+                System.out.println("------- GANA EL HUMANO -------");
+                
+            }
+            if (ejercitoHeroes[0].getVida()<=0) {
+                humano=0;
+                System.out.println("------- GANA EL ORCO 1 -------");
+                
+            }
+
+
+
+        }
+
+          while (trasgo==1 && elfo==1) {
+
+            System.out.println("\n          PELEA NO. 2          ");            
+            System.out.println("\n");
+            System.out.println(" ******** Ataque de Heroe a Bestia ********\n");
+            ejercitoBestia[1].atacar();
+            ejercitoBestia[1].setVida(ejercitoBestia[1].getVida() - ejercitoBestia[1].getNumAleatorio1());
+            ejercitoBestia[1].recibirAtaque(ejercitoHeroes[1]);
+
+            System.out.println("\n");
+            System.out.println(" ********Ataque de Bestia a Heroe ********\n");
+            ejercitoHeroes[1].atacar();
+            ejercitoHeroes[1].setVida(ejercitoHeroes[1].getVida() - ejercitoHeroes[1].getNumeroMayor());
+            ejercitoHeroes[1].recibirAtaque(ejercitoBestia[1]);
+
+            if (ejercitoBestia[1].getVida()<=0) {
+                trasgo=0;
+                System.out.println("------- GANA EL ELFO -------");
+                
+            }
+            if (ejercitoHeroes[1].getVida()<=0) {
+                elfo=0;
+                System.out.println("------- GANA EL TRASGO -------");
+                
+            }
+
+        }
+
+          while (orco2==1 && hobbit==1) {
+
+            System.out.println("\n          PELEA NO. 3          "); 
+
+            System.out.println("\n");
+            System.out.println(" ********Ataque de Heroe a Bestia ********\n");
+            ejercitoBestia[2].atacar();
+            ejercitoBestia[2].setVida(ejercitoBestia[2].getVida() - ejercitoBestia[2].getNumAleatorio1());
+            ejercitoBestia[2].recibirAtaque(ejercitoHeroes[2]);
+
+            System.out.println("\n");
+            System.out.println(" ********Ataque de Bestia a Heroe ********\n");
+            ejercitoHeroes[2].atacar();
+            ejercitoHeroes[2].setVida(ejercitoHeroes[2].getVida() - ejercitoHeroes[2].getNumeroMayor());
+            ejercitoHeroes[2].recibirAtaque(ejercitoBestia[2]);
+
+              if (ejercitoBestia[2].getVida()<=0) {
+                orco2=0;
+                System.out.println("------- GANA EL HOBBIT -------");
+                
+            }
+            if (ejercitoHeroes[2].getVida()<=0) {
+                hobbit=0;
+                System.out.println("------- GANA EL ORCO 2 -------");
+                
+            }
+
+        }
+
+          
     }
 
 }
