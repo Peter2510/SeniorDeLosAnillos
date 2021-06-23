@@ -1,6 +1,4 @@
-package src.personaje;
-
-public class Personaje{
+public class Bestia{
 
 	protected int vida;
 	protected int ataqueMaximo;
