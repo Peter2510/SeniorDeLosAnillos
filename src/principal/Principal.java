@@ -7,7 +7,7 @@ import src.heroes.*;
 public class Principal{
 
 	private Bestia ejercitoBestia [];
-	private Heroes ejercitoHeroes[];
+	private Heroes ejercitoHeroes [];
 
 
 	public Principal(){
@@ -20,15 +20,19 @@ public class Principal{
 		for (int i= 0; i < ejercitoBestia.length ;i++ ) {
 
 			ejercitoBestia[i].presentarse();
+
 			
 		}
 
+		ejercitoHeroes = new Heroes[5];
+		inicializarHeroes();
 
+		for (int i= 0; i < ejercitoHeroes.length ;i++ ) {
 
+			ejercitoHeroes[i].presentarse();
 
-
-
-
+			
+		}
 
 
 
@@ -65,6 +69,38 @@ public class Principal{
 		}
 	}
 
+	public void inicializarHeroes(){
+
+		int random;
+
+		for (int i = 0; i < ejercitoHeroes.length ; i++ ) {
+
+			int numero = (int)(Math.random()*4);
+
+			switch(numero){
+
+				case 0:
+
+				ejercitoHeroes[i] = new Elfos("Elfo1");
+				break;
+
+				case 1:
+
+				ejercitoHeroes[i] = new Humanos("Humano1");
+				break;
+
+				case 2:
+					ejercitoHeroes[i] = new Hobbits("Hobbit 1");
+					break;
+
+
+			}
+
+
+
+			
+		}
+	}
 		
 
 
