@@ -7,6 +7,8 @@ public class Principal {
 
     private Bestia ejercitoBestia[];
     private Heroes ejercitoHeroes[];
+    private int cantBestias = 3;
+    private int cantHeroes = 3;
     
 
     public Principal() {
@@ -82,11 +84,13 @@ public class Principal {
 
             if (ejercitoBestia[0].getVida()<=0) {
                 orco=0;
+                cantBestias--;
                 System.out.println("------- GANA EL HUMANO -------");
                 
             }
             if (ejercitoHeroes[0].getVida()<=0) {
                 humano=0;
+                cantHeroes--;
                 System.out.println("------- GANA EL ORCO 1 -------");
                 
             }
@@ -112,11 +116,13 @@ public class Principal {
 
             if (ejercitoBestia[1].getVida()<=0) {
                 trasgo=0;
+                cantBestias--;
                 System.out.println("------- GANA EL ELFO -------");
                 
             }
             if (ejercitoHeroes[1].getVida()<=0) {
                 elfo=0;
+                cantHeroes--;
                 System.out.println("------- GANA EL TRASGO -------");
                 
             }
@@ -141,18 +147,30 @@ public class Principal {
 
               if (ejercitoBestia[2].getVida()<=0) {
                 orco2=0;
+                cantBestias--;
                 System.out.println("------- GANA EL HOBBIT -------");
                 
             }
             if (ejercitoHeroes[2].getVida()<=0) {
                 hobbit=0;
+                cantHeroes--;
                 System.out.println("------- GANA EL ORCO 2 -------");
                 
             }
 
         }
 
-          
+          if (cantBestias > cantHeroes) {
+
+            System.out.println("\n\nGANA EL EJERCITO DE BESTIAS");
+              
+          }
+
+          else{
+           System.out.println("\n\nGANA EL EJERCITO DE HEROES");
+             
+          }
+
     }
 
 }
