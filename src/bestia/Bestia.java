@@ -8,7 +8,7 @@ public class Bestia extends Personaje{
 	
 	protected int ataqueMaximo = 90;
 	protected int cantidadDados = 1;
-	protected int NumAleatorio1;
+	//protected int NumAleatorio1;
 	
 
 
@@ -24,7 +24,7 @@ public class Bestia extends Personaje{
 	}
 
 	public void atacar(){
-		lanzarDado1(90);
+		lanzarDado1(ataqueMaximo);
 		System.out.println("El daño realizado fue de: " + getNumAleatorio1());
 
 	}

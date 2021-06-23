@@ -35,10 +35,14 @@ public class Personaje{
 		
 		numAleatorio1 = (int) (Math.random() * ataqueMaximo);	
 
+		System.out.println("El valor del dado 1 lanzado fue de: " + numAleatorio1);
+
 	}
 
 	public void lanzarDado2(int valorMaximo){
+
 		numAleatorio2 = (int) (Math.random() * ataqueMaximo);	
+		System.out.println("El valor del dado 2 lanzado fue de: " + numAleatorio2);
 
 	}
 
