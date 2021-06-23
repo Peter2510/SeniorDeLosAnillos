@@ -1,13 +1,13 @@
 package src.bestia;
 
 
-public class Orco extends Bestia{
+public class Trasgos extends Bestia{
 
 
 
-	public Orco(String nombre){
+	public Trasgos(String nombre){
 
-		super(nombre, 300);
+		super(nombre, 325);
 		
 
 

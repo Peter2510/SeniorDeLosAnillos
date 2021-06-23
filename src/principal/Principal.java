@@ -1,6 +1,6 @@
 package src.principal;
 
-import src.bestia.Orco;
+import src.bestia.*;
 
 public class Principal{
 
@@ -11,10 +11,13 @@ public class Principal{
 
 
 		Orco b1 = new Orco("Orco1");
+		Trasgos b2 = new Trasgos("Trasgo1");
+	
 	
 
 
 		b1.presentarse();
+		b2.presentarse();
 	
 	}
 
